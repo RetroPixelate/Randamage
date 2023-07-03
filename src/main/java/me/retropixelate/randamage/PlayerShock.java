@@ -22,7 +22,7 @@ public class PlayerShock extends BukkitRunnable {
                 PlayerEventListener.playerShockTime.put(entry.getKey(), entry.getValue() - 1);
                 entry.getKey().sendHurtAnimation(0);
             }
-            /* message = message + entry.getKey().getDisplayName() + ", " + entry.getValue().toString() + "; "; **/
+            // message = message + entry.getKey().getDisplayName() + ", " + entry.getValue().toString() + "; ";
         }
     }
 

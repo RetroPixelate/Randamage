@@ -15,6 +15,12 @@ public class PlayerEventListener implements Listener {
     public static HashMap<Player, Integer> playerDamageCooldowns = new HashMap<Player, Integer>();
     public static HashMap<Player, Integer> playerShockTime = new HashMap<Player, Integer>();
 
+    private final Randamage plugin;
+
+    public PlayerEventListener (Randamage plugin) {
+        this.plugin = plugin;
+    }
+
     @EventHandler
     public void onPlayerDamage(EntityDamageEvent event) {
         if (event.getEntityType() == EntityType.PLAYER) {
@@ -27,6 +33,7 @@ public class PlayerEventListener implements Listener {
                 World w = p.getWorld();
                 playerDamageCooldowns.put(p, 20);
                 int roll = ((int) Math.ceil(Math.random() * 2));
+                this.plugin.getServer().broadcastMessage(p.getDisplayName() + ", " + roll);
                 switch (roll) {
 
                     case 1:

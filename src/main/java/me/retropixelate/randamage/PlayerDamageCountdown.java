@@ -22,9 +22,9 @@ public class PlayerDamageCountdown extends BukkitRunnable {
             if (entry.getValue() > 0) {
                 PlayerEventListener.playerDamageCooldowns.put(entry.getKey(), entry.getValue() - 1);
             }
-            /* message = message + entry.getKey().getDisplayName() + ", " + entry.getValue().toString() + "; "; **/
+            // message = message + entry.getKey().getDisplayName() + ", " + entry.getValue().toString() + "; ";
         }
-        plugin.getServer().broadcastMessage(PlayerEventListener.playerDamageCooldowns.toString());
+        // plugin.getServer().broadcastMessage(PlayerEventListener.playerDamageCooldowns.toString());
     }
 
 }
