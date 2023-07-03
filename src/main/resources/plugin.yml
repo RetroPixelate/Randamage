@@ -1,0 +1,4 @@
+name: Randamage
+version: '${project.version}'
+main: me.retropixelate.randamage.Randamage
+api-version: '1.19'
