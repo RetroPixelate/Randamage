@@ -10,12 +10,15 @@ public final class Randamage extends JavaPlugin {
 
     public Randamage plugin;
 
+    public HashMap<Player, Integer> playerDamageCooldowns = new HashMap<Player, Integer>();
+    public HashMap<Player, Integer> playerShockTime = new HashMap<Player, Integer>();
+
     @Override
     public void onEnable() {
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(new PlayerEventListener(this), this);
-        BukkitTask pDmgCdTicks = new PlayerDamageCountdown(this).runTaskTimer(this, 0, 1);
         BukkitTask pShockTicks = new PlayerShock(this).runTaskTimer(this, 0, 1);
+        BukkitTask pDmgCdTicks = new PlayerDamageCountdown(this).runTaskTimer(this, 0, 1);
     }
 
     @Override

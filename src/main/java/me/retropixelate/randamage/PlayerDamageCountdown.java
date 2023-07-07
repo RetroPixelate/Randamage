@@ -9,18 +9,18 @@ import java.util.*;
 
 public class PlayerDamageCountdown extends BukkitRunnable {
 
-    private final JavaPlugin plugin;
+    private final Randamage plugin;
 
-    public PlayerDamageCountdown(JavaPlugin plugin) {
+    public PlayerDamageCountdown(Randamage plugin) {
         this.plugin = plugin;
     }
 
     @Override
     public void run() {
         String message = "";
-        for (Map.Entry<Player, Integer> entry : PlayerEventListener.playerDamageCooldowns.entrySet()) {
+        for (Map.Entry<Player, Integer> entry : plugin.playerDamageCooldowns.entrySet()) {
             if (entry.getValue() > 0) {
-                PlayerEventListener.playerDamageCooldowns.put(entry.getKey(), entry.getValue() - 1);
+                plugin.playerDamageCooldowns.put(entry.getKey(), entry.getValue() - 1);
             }
             // message = message + entry.getKey().getDisplayName() + ", " + entry.getValue().toString() + "; ";
         }
